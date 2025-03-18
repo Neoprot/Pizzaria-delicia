@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="app-header">
+  <div class="logo">
+    <span>Pizzaria Delícia</span>
+  </div>
+  <nav>
+    <a
+      mat-button
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <mat-icon>home</mat-icon> Home
+    </a>
+    <a mat-button routerLink="/about" routerLinkActive="active">
+      <mat-icon>info</mat-icon> About Us
+    </a>
+    <a mat-button routerLink="/contact" routerLinkActive="active">
+      <mat-icon>contact_support</mat-icon> Contact Us
+    </a>
+  </nav>
+</mat-toolbar>

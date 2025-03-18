@@ -1,0 +1,45 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+pizzaria-front/dist
+pizzaria-front/tmp
+pizzaria-front/out-tsc
+pizzaria-front/bazel-out
+
+# Node
+pizzaria-front/node_modules
+pizzaria-front/npm-debug.log
+pizzaria-front/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+pizzaria-front/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+pizzaria-front/.angular/cache
+pizzaria-front/.sass-cache/
+pizzaria-front/connect.lock
+pizzaria-front/coverage
+pizzaria-front/libpeerconnection.log
+pizzaria-front/testem.log
+pizzaria-front/typings
+
+# Backend
+pizzaria-back/target
+pizzaria-back/src/main/target
+pizzaria-back/src/test/target
+pizzaria-back/.mvn/wrapper/maven-wrapper.jar

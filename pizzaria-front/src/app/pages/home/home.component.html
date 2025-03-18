@@ -1,0 +1,62 @@
+<div class="home-container">
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Pizzaria Delícia!</h1>
+      <p>Discover our delicious selection of handcrafted pizzas.</p>
+      <button
+        mat-raised-button
+        color="accent"
+        class="create-btn"
+        (click)="openPizzaForm()"
+      >
+        <mat-icon>add</mat-icon>Create New Pizza
+      </button>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Our Pizza Selection</h2>
+
+    <ng-container>
+      @if (loading) {
+      <app-loader></app-loader>
+      }
+    </ng-container>
+
+    <ng-container>
+      @if (error) {
+      <div class="error-container">
+        <mat-icon color="warn">error</mat-icon>
+        <p>Failed to load pizzas. Please try again later.</p>
+        <button mat-raised-button color="primary" (click)="loadPizzas()">
+          Retry
+        </button>
+      </div>
+      }
+    </ng-container>
+
+    @if (!loading && !error) {
+    <div class="pizza-list">
+      @if (pizzas.length) {
+      <div class="pizzas-grid">
+        @for (pizza of pizzas; track pizza.id) {
+        <app-pizza-card
+          [pizza]="pizza"
+          (edit)="openPizzaForm($event)"
+          (delete)="deletePizza($event)"
+        ></app-pizza-card>
+        }
+      </div>
+      } @else {
+      <div class="empty-state">
+        <mat-icon>local_pizza</mat-icon>
+        <p>No pizzas available yet.</p>
+        <button mat-raised-button color="primary" (click)="openPizzaForm()">
+          Create Your First Pizza
+        </button>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

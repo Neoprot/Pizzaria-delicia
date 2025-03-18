@@ -1,0 +1,27 @@
+<mat-card class="pizza-card">
+  <mat-card-header>
+    <mat-card-title>{{ pizza.name }}</mat-card-title>
+    <mat-card-subtitle>{{
+      pizza.price.toFixed(2) | currency : "USD" : "symbol"
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="description">{{ pizza.description }}</p>
+    <div class="ingredients">
+      <h4>Ingredients:</h4>
+      <mat-chip-set>
+        @for (ingredient of pizza.ingredients; track $index) {
+        <mat-chip> {{ ingredient }} </mat-chip>
+        }
+      </mat-chip-set>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-icon-button color="primary" (click)="onEdit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

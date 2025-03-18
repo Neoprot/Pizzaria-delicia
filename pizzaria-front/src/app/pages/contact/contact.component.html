@@ -1,0 +1,119 @@
+<div class="contact-container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you!</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+
+          <div class="info-item">
+            <mat-icon>location_on</mat-icon>
+            <div>
+              <h3>Address</h3>
+              <p>123 Pizza Street<br />Delicious City, DC 12345</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>phone</mat-icon>
+            <div>
+              <h3>Phone</h3>
+              <p>(123) 456-7890</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>email</mat-icon>
+            <div>
+              <h3>Email</h3>
+              <p>info&#64;pizzariadelicia.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>access_time</mat-icon>
+            <div>
+              <h3>Opening Hours</h3>
+              <p>
+                Monday-Friday: 11am - 10pm<br />
+                Saturday-Sunday: 12pm - 11pm
+              </p>
+            </div>
+          </div>
+
+          <div class="map">
+            <h3>Find Us</h3>
+            <img src="../../../assets/images/map.jpg" alt="Map location" />
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Name</mat-label>
+              <input matInput formControlName="name" placeholder="John Doe" />
+              @if (contactForm.get('name')?.errors?.['required']) {
+              <mat-error>Name is required</mat-error>} @if
+              (contactForm.get('name')?.errors?.['minlength']) {
+              <mat-error>Name must be at least 3 characters</mat-error>}
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Email</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                placeholder="john@example.com"
+              />` @if (contactForm.get('email')?.errors?.['required']) {
+              <mat-error>Email is required</mat-error>} @if
+              (contactForm.get('email')?.errors?.['email']) {
+              <mat-error>Please enter a valid email address</mat-error>}
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Subject</mat-label>
+              <input
+                matInput
+                formControlName="subject"
+                placeholder="Question about your pizzas"
+              />
+              @if (contactForm.get('subject')?.errors?.['required']) {
+              <mat-error>Subject is required</mat-error>}
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Message</mat-label>
+              <textarea
+                matInput
+                formControlName="message"
+                rows="5"
+                placeholder="Type your message here..."
+              ></textarea>
+              @if (contactForm.get('message')?.errors?.['required']) {
+              <mat-error>Message is required</mat-error>} @if
+              (contactForm.get('message')?.errors?.['minlength']) {
+              <mat-error>Message must be at least 10 characters</mat-error>}
+            </mat-form-field>
+
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="contactForm.invalid"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

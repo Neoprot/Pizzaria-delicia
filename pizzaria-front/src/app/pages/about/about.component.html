@@ -1,0 +1,116 @@
+<div class="about-container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About Pizzaria Delícia</h1>
+      <p>Serving the best pizzas since 2023</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="container">
+      <h2>Our Story</h2>
+      <div class="story-content">
+        <div class="story-text">
+          <p>
+            Pizzaria Delícia was founded in 2023 with a simple mission: to
+            create and serve the most delicious pizzas made with the finest
+            ingredients and traditional methods.
+          </p>
+          <p>
+            What started as a small family business has grown into a beloved
+            pizza destination, known for both classic recipes and innovative
+            creations that delight our customers.
+          </p>
+          <p>
+            We believe that great pizza starts with passion, quality
+            ingredients, and attention to detail. Every pizza we make is crafted
+            with care, following recipes that have been perfected over time.
+          </p>
+        </div>
+        <div class="story-image">
+          <img
+            src="assets/images/pizzaria-dentro.png"
+            alt="Inside our restaurant"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <mat-card>
+          <mat-card-header>
+            <mat-icon color="primary">restaurant</mat-icon>
+            <mat-card-title>Quality</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              We use only the freshest, highest-quality ingredients in our
+              pizzas. No compromises.
+            </p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-icon color="primary">people</mat-icon>
+            <mat-card-title>Community</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              We're proud to be part of our local community and strive to give
+              back whenever possible.
+            </p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-icon color="primary">eco</mat-icon>
+            <mat-card-title>Sustainability</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              We're committed to environmentally friendly practices in all
+              aspects of our business.
+            </p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-icon color="primary">thumb_up</mat-icon>
+            <mat-card-title>Satisfaction</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Customer satisfaction is our top priority. We want every
+              experience to be exceptional.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        @for (member of teamMembers; track $index) {
+        <mat-card class="team-member">
+          <img mat-card-image [src]="member.image" [alt]="member.name" />
+          <mat-card-content>
+            <h3>{{ member.name }}</h3>
+            <p class="position">{{ member.position }}</p>
+            <p class="bio">{{ member.bio }}</p>
+          </mat-card-content>
+        </mat-card>
+        }
+      </div>
+    </div>
+  </section>
+</div>
